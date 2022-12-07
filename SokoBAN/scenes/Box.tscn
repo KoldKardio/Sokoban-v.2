@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 8, 8 )
 
-[node name="Box" type="KinematicBody2D"]
+[node name="Box" type="KinematicBody2D" groups=["box"]]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

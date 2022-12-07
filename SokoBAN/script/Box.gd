@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var tween = get_parent().get_node("Tween")
+onready var tween = get_node("../../Tween")
 
 var pushin = false
 
@@ -14,7 +14,7 @@ func push(direction, TILE_SIZE):
 	tween.interpolate_property(
 		self, "position", 
 		position, position + direction * TILE_SIZE, 
-		0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+		0.3, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
 	)
 	
 	tween.start()

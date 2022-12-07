@@ -24,7 +24,9 @@ func _physics_process(delta):
 		move(delta)
 	else: is_moving = false
 	
-	pass
+	if Input.is_action_pressed("reset"):
+		get_tree().reload_current_scene()
+	
 
 # player_inputs #
 func player_input():
@@ -52,12 +54,17 @@ func move(delta):
 			position = init_position + (TILE_SIZE * input_direction)
 			move_to_tile = 0
 			is_moving = false
+			#move counter
+			get_parent().moves += 1
+			
 		else:
 			position = init_position + (TILE_SIZE * input_direction * move_to_tile )
+		
 	else:
 		is_moving = false
 		var node = ray.get_collider()
 #		print("Player is in collision!...:", ray.get_collider()) # obtain the data on collider
-		if node is KinematicBody2D:
+		if node is KinematicBody2D: # id node is is_in_group('box') - using group method
+			get_parent().moves += 1
 			node.push(input_direction, TILE_SIZE)
 	pass
