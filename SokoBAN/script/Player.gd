@@ -54,9 +54,6 @@ func move(delta):
 			position = init_position + (TILE_SIZE * input_direction)
 			move_to_tile = 0
 			is_moving = false
-			#move counter
-			get_parent().moves += 1
-			
 		else:
 			position = init_position + (TILE_SIZE * input_direction * move_to_tile )
 		
@@ -65,6 +62,5 @@ func move(delta):
 		var node = ray.get_collider()
 #		print("Player is in collision!...:", ray.get_collider()) # obtain the data on collider
 		if node is KinematicBody2D: # id node is is_in_group('box') - using group method
-			get_parent().moves += 1
 			node.push(input_direction, TILE_SIZE)
 	pass

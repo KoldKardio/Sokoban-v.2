@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-onready var tween = get_node("../../Tween")
+#onready var tween = get_node("../../Tween")
+onready var tween = get_node("Tween")
 
 var pushin = false
 
@@ -9,7 +10,6 @@ func push(direction, TILE_SIZE):
 		return
 	if test_move(transform, direction): # collision detection to walls
 		return
-	
 	pushin = true
 	tween.interpolate_property(
 		self, "position", 

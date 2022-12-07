@@ -74,23 +74,21 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -6
 [node name="spots" type="Node2D" parent="."]
 
 [node name="goal" parent="spots" instance=ExtResource( 4 )]
-position = Vector2( 72, 88 )
+position = Vector2( 56, 88 )
 
 [node name="goal2" parent="spots" instance=ExtResource( 4 )]
-position = Vector2( 104, 88 )
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 88, 40 )
+position = Vector2( 88, 88 )
 
 [node name="boxes" type="Node2D" parent="."]
 
 [node name="Box" parent="boxes" instance=ExtResource( 3 )]
-position = Vector2( 72, 72 )
+position = Vector2( 88, 72 )
 
 [node name="Box2" parent="boxes" instance=ExtResource( 3 )]
-position = Vector2( 104, 72 )
+position = Vector2( 56, 72 )
 
-[node name="Tween" type="Tween" parent="."]
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 88, 40 )
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 margin_left = 32.0
@@ -100,12 +98,4 @@ margin_bottom = 98.0
 window_title = ":)"
 dialog_text = "level cleared"
 
-[node name="moves" type="Label" parent="."]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 56.0
-margin_bottom = 30.0
-text = "moves: 0"
-
-[connection signal="tween_all_completed" from="Tween" to="boxes/Box" method="_on_Tween_tween_all_completed"]
 [connection signal="confirmed" from="AcceptDialog" to="." method="_on_AcceptDialog_confirmed"]
