@@ -1,1 +1,1 @@
-# Improved Version of SOKOBAN
+# Improved Version of Sokoban v.1
